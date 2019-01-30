@@ -3,6 +3,7 @@
 // See the LICENSE file in the project root for more information.
 
 using System;
+using System.Diagnostics;
 using System.IO;
 using System.Text;
 using Microsoft.CodeAnalysis;
@@ -55,9 +56,23 @@ namespace Microsoft.DotNet.CodeFormatting
             {
                 try
                 {
-                    using (var writer = new StreamWriter(document.FilePath, append: false, encoding: text.Encoding ?? s_utf8WithoutBom))
+                    using (var memoryFile = new MemoryStream())
                     {
-                        text.Write(writer);
+                        var encoding = text.Encoding ?? s_utf8WithoutBom;
+                        using (var writer = new StreamWriter(memoryFile, encoding: encoding))
+                        {
+                            text.Write(writer);
+                        }
+
+                        var bytes = memoryFile.ToArray();
+                        var contextTextNew = encoding.GetString(bytes);
+                        var contentTextRaw = File.ReadAllText(document.FilePath, encoding);
+
+                        if (!StringComparer.Ordinal.Equals(contextTextNew, contentTextRaw))
+                        {
+                            Console.WriteLine($"Updating {document.FilePath}");
+                            File.WriteAllBytes(document.FilePath, bytes);
+                        }
                     }
                 }
                 catch (IOException e)
