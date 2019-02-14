@@ -1,6 +1,6 @@
 # CodeFormatter
 
-[![Build status](https://img.shields.io/travis/hanabi1224/codeformatter/master.svg)](https://travis-ci.org/hanabi1224/codeformatter)
+[![Build status](https://img.shields.io/appveyor/ci/hanabi1224/codeformatter/master.svg)](https://ci.appveyor.com/project/hanabi1224/codeformatter)
 
 CodeFormatter is a tool that uses Roslyn to automatically rewrite the source to
 follow our coding styles, which are [documented here][corefx-coding-style].
