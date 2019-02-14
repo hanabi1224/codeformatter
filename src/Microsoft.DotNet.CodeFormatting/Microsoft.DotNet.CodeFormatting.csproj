@@ -6,6 +6,7 @@
     <PackageReference Include="Microsoft.Build" Version="$(MSBuildPackageVersion)" />
     <PackageReference Include="Microsoft.Build.Tasks.Core" Version="$(MSBuildPackageVersion)" />
     <PackageReference Include="Microsoft.CodeAnalysis" Version="$(MicrosoftCodeAnalysisPackageVersion)" />
+    <PackageReference Include="Microsoft.CodeAnalysis.Workspaces.MSBuild" Version="$(MicrosoftCodeAnalysisPackageVersion)" />
     <PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="$(MicrosoftCodeAnalysisAnalyzersPackageVersion)" />
   </ItemGroup>
 </Project>

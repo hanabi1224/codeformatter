@@ -46,7 +46,7 @@ namespace Microsoft.DotNet.DeadRegionAnalysis
             var firstFileExt = Path.GetExtension(filePaths.First());
             if (firstFileExt.EndsWith("proj", StringComparison.OrdinalIgnoreCase))
             {
-                projects = await Task.WhenAll(from path in filePaths select MSBuildWorkspace.Create().OpenProjectAsync(path, cancellationToken));
+                projects = await Task.WhenAll(from path in filePaths select MSBuildWorkspace.Create().OpenProjectAsync(path, cancellationToken: cancellationToken));
             }
             else
             {

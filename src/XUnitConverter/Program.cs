@@ -32,7 +32,7 @@ namespace XUnitConverter
             var workspace = MSBuildWorkspace.Create();
             workspace.LoadMetadataForReferencedProjects = true;
 
-            var project = await workspace.OpenProjectAsync(projectPath, cancellationToken);
+            var project = await workspace.OpenProjectAsync(projectPath, cancellationToken: cancellationToken);
             var converters = new ConverterBase[]
                 {
                     new MSTestToXUnitConverter(),

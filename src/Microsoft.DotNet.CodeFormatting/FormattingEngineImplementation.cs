@@ -275,11 +275,12 @@ namespace Microsoft.DotNet.CodeFormatting
                 }
 
                 StartDocument();
-                var newRoot = RunSyntaxPass(syntaxRoot, document.Project.Language);
+                var newRoot = RunSyntaxPass(syntaxRoot, document.Project.Language, out var appliedRules);
                 EndDocument(document);
 
-                if (newRoot != syntaxRoot)
+                if (newRoot.ToString() != syntaxRoot.ToString())
                 {
+                    FormatLogger.WriteLine($"[CodeFormatter] Updating file {document.FilePath} with rules {string.Join(",", appliedRules)}");
                     currentSolution = currentSolution.WithDocumentSyntaxRoot(document.Id, newRoot);
                 }
             }
@@ -287,13 +288,22 @@ namespace Microsoft.DotNet.CodeFormatting
             return currentSolution;
         }
 
-        private SyntaxNode RunSyntaxPass(SyntaxNode root, string languageName)
+        private SyntaxNode RunSyntaxPass(SyntaxNode root, string languageName, out IReadOnlyList<string> appliedRules)
         {
+            var appliedRulesList = new List<string>();
+            appliedRules = appliedRulesList;
+            var lastRoot = root;
             foreach (var rule in GetOrderedRules(_syntaxRules))
             {
                 if (rule.SupportsLanguage(languageName))
                 {
                     root = rule.Process(root, languageName);
+                    if (lastRoot != root)
+                    {
+                        appliedRulesList.Add(rule.GetType().Name);
+                    }
+
+                    lastRoot = root;
                 }
             }
 
@@ -332,8 +342,9 @@ namespace Microsoft.DotNet.CodeFormatting
                 var newRoot = await localSemanticRule.ProcessAsync(document, syntaxRoot, cancellationToken);
                 EndDocument(document);
 
-                if (syntaxRoot != newRoot)
+                if (syntaxRoot.ToString() != newRoot.ToString())
                 {
+                    FormatLogger.WriteLine($"[CodeFormatter] Updating file {document.FilePath}");
                     currentSolution = currentSolution.WithDocumentSyntaxRoot(documentId, newRoot);
                 }
             }

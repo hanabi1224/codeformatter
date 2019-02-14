@@ -113,7 +113,7 @@ namespace CodeFormatter
         }
 
         private static async Task RunFormatItemAsync(IFormattingEngine engine, string item, string language, CancellationToken cancellationToken)
-        { 
+        {
             Console.WriteLine(Path.GetFileName(item));
             string extension = Path.GetExtension(item);
             if (StringComparer.OrdinalIgnoreCase.Equals(extension, ".rsp"))
@@ -129,7 +129,7 @@ namespace CodeFormatter
                 using (var workspace = MSBuildWorkspace.Create())
                 {
                     workspace.LoadMetadataForReferencedProjects = true;
-                    var solution = await workspace.OpenSolutionAsync(item, cancellationToken);
+                    var solution = await workspace.OpenSolutionAsync(item, cancellationToken: cancellationToken);
                     await engine.FormatSolutionAsync(solution, cancellationToken);
                 }
             }
@@ -138,7 +138,7 @@ namespace CodeFormatter
                 using (var workspace = MSBuildWorkspace.Create())
                 {
                     workspace.LoadMetadataForReferencedProjects = true;
-                    var project = await workspace.OpenProjectAsync(item, cancellationToken);
+                    var project = await workspace.OpenProjectAsync(item, cancellationToken: cancellationToken);
                     await engine.FormatProjectAsync(project, cancellationToken);
                 }
             }

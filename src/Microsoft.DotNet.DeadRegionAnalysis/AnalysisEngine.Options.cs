@@ -12,7 +12,6 @@ using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.MSBuild;
-using Microsoft.CodeAnalysis.Text;
 
 namespace Microsoft.DotNet.DeadRegionAnalysis
 {
@@ -40,7 +39,7 @@ namespace Microsoft.DotNet.DeadRegionAnalysis
             {
                 if (projectPaths != null)
                 {
-                    projects = Task.WhenAll(from path in projectPaths select MSBuildWorkspace.Create().OpenProjectAsync(path, CancellationToken.None)).Result;
+                    projects = Task.WhenAll(from path in projectPaths select MSBuildWorkspace.Create().OpenProjectAsync(path, cancellationToken: CancellationToken.None)).Result;
                 }
                 if (projects != null)
                 {

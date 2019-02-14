@@ -83,8 +83,8 @@ namespace Microsoft.DotNet.CodeFormatting.Tests
             foreach (var expected in expectedDocuments)
             {
                 var actual = actualDocuments.Where(d => d.Name == expected.Name).Single();
-                var aText = actual.GetTextAsync().Result.ToString();
-                var eText = expected.GetTextAsync().Result.ToString();
+                var aText = actual.GetTextAsync().Result.ToString().Replace("\r\n", "\n");
+                var eText = expected.GetTextAsync().Result.ToString().Replace("\r\n", "\n");
                 if (eText != aText)
                 {
                     Assert.False(true, "Document " + expected.Name + " did not match.\nActual:\n" + aText + "\nExpected:\n" + eText);
