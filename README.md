@@ -1,7 +1,7 @@
 # CodeFormatter
 
 [![Build status](https://img.shields.io/appveyor/ci/hanabi1224/codeformatter/nuget.svg)](https://ci.appveyor.com/project/hanabi1224/codeformatter)
-[![NuGet](https://buildstats.info/nuget/codeformatter)](https://www.nuget.org/packages/codeformatter)
+[![NuGet](https://buildstats.info/nuget/Dotnet.CodeFormatter.BuildTask.Fork)](https://www.nuget.org/packages/Dotnet.CodeFormatter.BuildTask.Fork)
 
 CodeFormatter is a tool that uses Roslyn to automatically rewrite the source to
 follow our coding styles, which are [documented here][corefx-coding-style].
