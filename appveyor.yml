@@ -1,6 +1,8 @@
 image:
   - Visual Studio 2017
 build_script:
+  - dotnet build src/CodeFormatter -c Release
+  - dotnet build src/DeadRegions -c Release
   - dotnet build src -c Release
 test_script:
   - echo "dotnet test src -c Release"

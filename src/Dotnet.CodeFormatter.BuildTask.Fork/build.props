@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <PropertyGroup>
+    <ToolDir>$(MSBuildThisFileDirectory)..\tools\</ToolDir>
+    <CodeFormatterExePath>$(ToolDir)CodeFormatter\CodeFormatter.exe</CodeFormatterExePath>
+    <DeadRegionsExePath>$(ToolDir)DeadRegions\DeadRegions.exe</DeadRegionsExePath>
+  </PropertyGroup>
+
+  <Target
+    Name="FormatCodeTarget"
+    BeforeTargets="PreBuildEvent"
+    Condition=" '$(DesignTimeBuild)' != 'true' and '$(OS)' == 'Windows_NT' ">
+    <PropertyGroup>
+      <CodeFormatterArguments Condition=" '$(CodeFormatterArguments)' == '' ">/nounicode /nocopyright</CodeFormatterArguments>
+      <CodeFormatterRulesToAdd Condition=" '$(CodeFormatterRulesToAdd)' == '' ">UsingLocation,NewLineAbove,BraceNewLine</CodeFormatterRulesToAdd>
+    </PropertyGroup>
+
+    <Exec Command="&quot;$(DeadRegionsExePath)&quot; &quot;$(MSBuildProjectFullPath)&quot;"
+          Condition=" '$(FormatCodeOptOut)' != 'true' " />
+    <Exec Command="&quot;$(CodeFormatterExePath)&quot; $(CodeFormatterArguments) /rule+:$(CodeFormatterRulesToAdd) &quot;$(MSBuildProjectFullPath)&quot;"
+          Condition=" '$(FormatCodeOptOut)' != 'true' " />
+  </Target>
+
+</Project>

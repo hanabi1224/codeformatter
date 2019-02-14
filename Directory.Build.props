@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
+    <LangVersion>latest</LangVersion>
+    <Deterministic>true</Deterministic>
+    <Features>pdb-path-determinism</Features>
     <BaseIntermediateOutputPath Condition="'$(BaseIntermediateOutputPath)' == ''">$(MSBuildThisFileDirectory)obj\$(MSBuildProjectName)\</BaseIntermediateOutputPath>
     <BaseOutputPath Condition="'$(BaseOutputPath)' == ''">$(MSBuildThisFileDirectory)bin\$(MSBuildProjectName)\</BaseOutputPath>
     <Authors Condition="'$(Authors)' == ''">Microsoft Corporation</Authors>
