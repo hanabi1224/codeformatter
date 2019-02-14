@@ -1,0 +1,49 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <PackageId>Dotnet.CodeFormatter.BuildTask.Fork</PackageId>
+    <Version>0.0.1-pre1</Version>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>hanabi1224</Authors>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <PackageLicenseUrl>https://opensource.org/licenses/MIT</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/hanabi1224/codeformatter</PackageProjectUrl>
+    <RepositoryType>Git</RepositoryType>
+    <PackageTags>code formatter;formatter;</PackageTags>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="build.props">
+      <PackagePath>build\$(PackageId).props</PackagePath>
+      <Pack>true</Pack>
+    </Content>
+    <Content Include="..\..\bin\DeadRegions\$(Configuration)\net46\*.*">
+      <PackagePath>tools\DeadRegions\%(Filename)%(Extension)</PackagePath>
+      <Pack>true</Pack>
+      <Visible>false</Visible>
+    </Content>
+    <Content Include="..\..\bin\CodeFormatter\$(Configuration)\net46\*.*">
+      <PackagePath>tools\CodeFormatter\%(Filename)%(Extension)</PackagePath>
+      <Pack>true</Pack>
+      <Visible>false</Visible>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CodeFormatter\CodeFormatter.csproj">
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DeadRegions\DeadRegions.csproj">
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+
+</Project>

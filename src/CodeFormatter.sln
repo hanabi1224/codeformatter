@@ -35,6 +35,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "miscs", "miscs", "{19C39250
 		..\README.md = ..\README.md
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dotnet.CodeFormatter.BuildTask.Fork", "Dotnet.CodeFormatter.BuildTask.Fork\Dotnet.CodeFormatter.BuildTask.Fork.csproj", "{1C7CD32C-3B57-421A-8CE0-78AEDC58A46A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -73,6 +75,10 @@ Global
 		{B65D5F61-64BF-4219-863C-74C2744AE8FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B65D5F61-64BF-4219-863C-74C2744AE8FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B65D5F61-64BF-4219-863C-74C2744AE8FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C7CD32C-3B57-421A-8CE0-78AEDC58A46A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C7CD32C-3B57-421A-8CE0-78AEDC58A46A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C7CD32C-3B57-421A-8CE0-78AEDC58A46A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C7CD32C-3B57-421A-8CE0-78AEDC58A46A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
