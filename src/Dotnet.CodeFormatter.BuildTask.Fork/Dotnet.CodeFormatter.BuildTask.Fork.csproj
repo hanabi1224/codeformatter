@@ -7,9 +7,20 @@
   <PropertyGroup>
     <IncludeBuildOutput>false</IncludeBuildOutput>
     <PackageId>Dotnet.CodeFormatter.BuildTask.Fork</PackageId>
-    <Version>0.0.1-pre1</Version>
+    <Version>0.0.1</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>hanabi1224</Authors>
+    <Description>
+    <![CDATA[
+    This package is forked from https://github.com/dotnet/codeformatter
+    Add below snippet to your .csproj files
+    <ItemGroup>
+      <PackageReference Include="Dotnet.CodeFormatter.BuildTask.Fork" Version="$(Version)">
+        <PrivateAssets>all</PrivateAssets>
+      </PackageReference>
+    </ItemGroup>
+    ]]>
+    </Description>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <PackageLicenseUrl>https://opensource.org/licenses/MIT</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/hanabi1224/codeformatter</PackageProjectUrl>
