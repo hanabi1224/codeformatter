@@ -2,12 +2,12 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
-using Microsoft.CodeAnalysis;
-using Microsoft.CodeAnalysis.Formatting;
-using Microsoft.CodeAnalysis.Text;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using Microsoft.CodeAnalysis;
+using Microsoft.CodeAnalysis.Formatting;
+using Microsoft.CodeAnalysis.Text;
 using Xunit;
 
 namespace XUnitConverter.Tests
@@ -70,7 +70,7 @@ namespace XUnitConverter.Tests
             var project = CreateSolution(text);
             project = await RunConverter(project, runFormatter);
             var actual = await project.Documents.Single().GetTextAsync(CancellationToken.None);
-            Assert.Equal(expected, actual.ToString());
+            Assert.Equal(expected.Replace("\r\n", "\n"), actual.ToString().Replace("\r\n", "\n"));
         }
     }
 }
