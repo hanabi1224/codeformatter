@@ -17,19 +17,19 @@
   <Target Name="CopyMSBuildForMono"
           AfterTargets="AfterBuild"
           Condition=" '$(OS)' == 'Unix' ">
-      <ItemGroup>
-          <_CopyItems Include="..\ExternalApis\msbuild\*.*" />
-      </ItemGroup>
-      <Copy
-          SourceFiles="@(_CopyItems)"
-          DestinationFolder="$(TargetDir)\msbuild"
+    <ItemGroup>
+      <_CopyItems Include="..\ExternalApis\msbuild\*.*" />
+    </ItemGroup>
+    <Copy
+        SourceFiles="@(_CopyItems)"
+        DestinationFolder="$(TargetDir)\msbuild"
           />
   </Target>
   <Target Name="AfterClean"
           Condition=" '$(OS)' == 'Unix' ">
-      <ItemGroup>
-          <LocalMonoMSBuild Include="$(TargetDir)\msbuild" />
-      </ItemGroup>
-      <RemoveDir Directories="@(LocalMonoMSBuild)" />
+    <ItemGroup>
+      <LocalMonoMSBuild Include="$(TargetDir)\msbuild" />
+    </ItemGroup>
+    <RemoveDir Directories="@(LocalMonoMSBuild)" />
   </Target>
 </Project>

@@ -3,21 +3,37 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27616.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.DotNet.CodeFormatting", "Microsoft.DotNet.CodeFormatting\Microsoft.DotNet.CodeFormatting.csproj", "{D535641F-A2D7-481C-930D-96C02F052B95}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.DotNet.CodeFormatting", "Microsoft.DotNet.CodeFormatting\Microsoft.DotNet.CodeFormatting.csproj", "{D535641F-A2D7-481C-930D-96C02F052B95}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeFormatter", "CodeFormatter\CodeFormatter.csproj", "{B0E1A988-F762-459D-AD0D-56A3CF4FFF3F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeFormatter", "CodeFormatter\CodeFormatter.csproj", "{B0E1A988-F762-459D-AD0D-56A3CF4FFF3F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.DotNet.CodeFormatting.Tests", "Microsoft.DotNet.CodeFormatting.Tests\Microsoft.DotNet.CodeFormatting.Tests.csproj", "{D4D6FF88-0586-43C7-BDE4-D336EB25E7AA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.DotNet.CodeFormatting.Tests", "Microsoft.DotNet.CodeFormatting.Tests\Microsoft.DotNet.CodeFormatting.Tests.csproj", "{D4D6FF88-0586-43C7-BDE4-D336EB25E7AA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XUnitConverter", "XUnitConverter\XUnitConverter.csproj", "{81B0FF57-C128-4F6B-83C7-94DBAF261582}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XUnitConverter", "XUnitConverter\XUnitConverter.csproj", "{81B0FF57-C128-4F6B-83C7-94DBAF261582}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XUnitConverter.Tests", "XUnitConverter.Tests\XUnitConverter.Tests.csproj", "{BA4C1700-8A72-4F33-AF67-0E60F324E521}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XUnitConverter.Tests", "XUnitConverter.Tests\XUnitConverter.Tests.csproj", "{BA4C1700-8A72-4F33-AF67-0E60F324E521}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.DotNet.DeadRegionAnalysis", "Microsoft.DotNet.DeadRegionAnalysis\Microsoft.DotNet.DeadRegionAnalysis.csproj", "{27F04393-37FD-4D02-B574-0084BB7F6A59}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.DotNet.DeadRegionAnalysis", "Microsoft.DotNet.DeadRegionAnalysis\Microsoft.DotNet.DeadRegionAnalysis.csproj", "{27F04393-37FD-4D02-B574-0084BB7F6A59}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.DotNet.DeadRegionAnalysis.Tests", "Microsoft.DotNet.DeadRegionAnalysis.Tests\Microsoft.DotNet.DeadRegionAnalysis.Tests.csproj", "{7C57FD95-030E-48B2-B369-6694BB922C8C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.DotNet.DeadRegionAnalysis.Tests", "Microsoft.DotNet.DeadRegionAnalysis.Tests\Microsoft.DotNet.DeadRegionAnalysis.Tests.csproj", "{7C57FD95-030E-48B2-B369-6694BB922C8C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeadRegions", "DeadRegions\DeadRegions.csproj", "{B65D5F61-64BF-4219-863C-74C2744AE8FC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeadRegions", "DeadRegions\DeadRegions.csproj", "{B65D5F61-64BF-4219-863C-74C2744AE8FC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "miscs", "miscs", "{19C39250-7012-4920-ACA4-C850A5CB0584}"
+	ProjectSection(SolutionItems) = preProject
+		..\.gitattributes = ..\.gitattributes
+		..\.gitignore = ..\.gitignore
+		..\appveyor.yml = ..\appveyor.yml
+		..\build.binlog = ..\build.binlog
+		..\build.cmd = ..\build.cmd
+		..\dependencies.props = ..\dependencies.props
+		..\Directory.Build.props = ..\Directory.Build.props
+		..\init-tools.sh = ..\init-tools.sh
+		..\LICENSE = ..\LICENSE
+		..\netci.groovy = ..\netci.groovy
+		..\NuGet.config = ..\NuGet.config
+		..\README.md = ..\README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
