@@ -7,7 +7,7 @@
   <PropertyGroup>
     <IncludeBuildOutput>false</IncludeBuildOutput>
     <PackageId>Dotnet.CodeFormatter.BuildTask.Fork</PackageId>
-    <Version>0.0.1</Version>
+    <Version>0.0.2</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>hanabi1224</Authors>
     <Description>

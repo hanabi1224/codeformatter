@@ -17,7 +17,7 @@
     </PropertyGroup>
 
     <Exec Command="&quot;$(DeadRegionsExePath)&quot; &quot;$(MSBuildProjectFullPath)&quot;"
-          Condition=" '$(FormatCodeOptOut)' != 'true' " />
+          Condition=" '$(DeadRegionsOptOut)' != 'true' " />
     <Exec Command="&quot;$(CodeFormatterExePath)&quot; $(CodeFormatterArguments) /rule+:$(CodeFormatterRulesToAdd) &quot;$(MSBuildProjectFullPath)&quot;"
           Condition=" '$(FormatCodeOptOut)' != 'true' " />
   </Target>
